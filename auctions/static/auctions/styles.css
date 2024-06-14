@@ -1,0 +1,10 @@
+body {
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+#listing_body {
+    color: rgb(199, 187, 187);
+    background-color: rgb(24, 24, 24);
+}

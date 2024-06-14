@@ -1,0 +1,20 @@
+{% extends "auctions/layout.html" %} 
+
+{% block body %}
+    {% for category in categories %}
+        <a href="{% url 'categories' name=category.category_name %}" class="mx-2">{{ category }}</a>
+    {% endfor %}
+    <p style="text-decoration: underline;" class="mx-4">{{ categories_msg }}</p>
+    <div class="row mx-4">
+        {% for listing in active_listings %}
+        <div class="card" style="width: 18rem; margin-right: 2rem; margin-top: 2rem;">
+            <img class="card-img-top" src="{{ listing.image }}" alt="{{ listing }}" height="200px">
+            <div class="card-body" id="listing_body">
+                <h5 class="card-title">{{ listing }}</h5>
+                <p class="card-text">{{ listing.description }}</p>
+                <a href="{% url 'listing_details' id=listing.id %}" class="btn btn-primary">Details</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
